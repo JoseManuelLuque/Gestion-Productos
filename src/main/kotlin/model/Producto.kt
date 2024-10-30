@@ -17,7 +17,7 @@ import java.util.Date
 @Table(name = "Productos")
 class Producto(
     @Id
-    @Column("id")
+    @Column("id", length = 9)
     var id_producto: String,
 
     @Column
