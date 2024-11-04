@@ -20,26 +20,26 @@ class Producto(
     @Column("id", length = 9)
     var id_producto: String,
 
-    @Column
+    @Column(nullable = false, length = 10)
     var categoria: String,
 
-    @Column
+    @Column(nullable = false, length = 50)
     var nombre: String,
 
     @Column
     var descripcion: String,
 
-    @Column("Precio sin IVA")
+    @Column("Precio sin IVA", nullable = false)
     var precio_sin_IVA: Float,
 
-    @Column("Precio")
+    @Column("Precio", nullable = false)
     var precio_IVA: Float,
 
-    @Column(name = "Fecha de Alta")
+    @Column(name = "Fecha de Alta", nullable = false)
     @Temporal(TemporalType.DATE)
     var fecha_alta: Date,
 
-    @Column
+    @Column(nullable = false)
     var stock: Int,
 
     @ManyToOne(cascade = [CascadeType.ALL])

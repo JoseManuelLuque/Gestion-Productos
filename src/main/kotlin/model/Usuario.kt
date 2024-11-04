@@ -13,7 +13,7 @@ class Usuario(
     @Column("Nombre")
     var nombreUsuario: String,
 
-    @Column(name = "Conraseñas", nullable = false, length = 20)
+    @Column(name = "Conraseña", nullable = false, length = 20)
     var password: String,
 ) {
 }

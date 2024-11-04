@@ -1,17 +1,18 @@
 import jakarta.persistence.EntityManager
 import jakarta.persistence.EntityManagerFactory
 import jakarta.persistence.Persistence
+import model.Usuario
 
 fun main() {
+    // Crear EntityManagerFactory usando Persistence
     val emf: EntityManagerFactory = Persistence.createEntityManagerFactory("GestionProductos")
+    // Crear EntityManager
     var em: EntityManager = emf.createEntityManager()
 
-    em.transaction.begin()
-    em.transaction.commit()
-    em.close()
+
 }
 
-fun printMenu() {
+fun menu() {
     println(
         "1. Alta de Producto\n" +
                 "2. Baja de Producto\n" +
