@@ -1,4 +1,4 @@
-package com.es.tema2.orm.hibernateInstituto.utils
+package utils
 
 import jakarta.persistence.EntityManager
 import jakarta.persistence.EntityManagerFactory
@@ -9,7 +9,7 @@ object HibernateUtils {
 
     private lateinit var emf: EntityManagerFactory
 
-    private fun getEntityManagerFactory(namePersistenceUnit: String = ""): EntityManagerFactory {
+    fun getEntityManagerFactory(namePersistenceUnit: String = ""): EntityManagerFactory {
         return if(this::emf.isInitialized && emf.isOpen) {
             emf;
         } else {

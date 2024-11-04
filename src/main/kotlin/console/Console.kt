@@ -1,7 +1,7 @@
 package console
 
 class Console {
-    fun mostrarMensaje(message: String, lineBreak: Boolean) {
+    fun printMsg(message: String, lineBreak: Boolean) {
         if (lineBreak) {
             println(message)
         } else {
@@ -12,10 +12,10 @@ class Console {
     fun readStr(message: String, lineBreak: Boolean, minLength: Int = 0, maxLength: Int = Int.MAX_VALUE): String {
         var string: String
         do {
-            mostrarMensaje(message, lineBreak)
+            printMsg(message, lineBreak)
             string = readln().trim()
             if (string.length !in minLength..maxLength) {
-                mostrarMensaje("Error, la cadena introducida no cumple con los requisitos.", true)
+                printMsg("Error, la cadena introducida no cumple con los requisitos.", true)
             }
         } while (string.length !in minLength.. maxLength)
 
@@ -26,13 +26,13 @@ class Console {
         var numero: Int?
         do {
             try {
-                mostrarMensaje(message, lineBreak)
+                printMsg(message, lineBreak)
                 numero = readln().trim().toInt()
                 if (numero !in min..max) {
-                    mostrarMensaje("Error, el número introducido no cumple los requisitos.", true)
+                    printMsg("Error, el número introducido no cumple los requisitos.", true)
                 }
             } catch (e: NumberFormatException) {
-                mostrarMensaje("Error, el valor introducido no es un número entero.", true)
+                printMsg("Error, el valor introducido no es un número entero.", true)
                 numero = null
             }
         } while (numero !in min.. max)
@@ -44,13 +44,13 @@ class Console {
         var numero: Float?
         do {
             try {
-                mostrarMensaje(message, lineBreak)
+                printMsg(message, lineBreak)
                 numero = readln().trim().toFloat()
                 if (numero !in min..max) {
-                    mostrarMensaje("Error, el número introducido no cumple los requisitos.", true)
+                    printMsg("Error, el número introducido no cumple los requisitos.", true)
                 }
             } catch (e: NumberFormatException) {
-                mostrarMensaje("Error, el valor introducido no es un número entero.", true)
+                printMsg("Error, el valor introducido no es un número entero.", true)
                 numero = null
             }
         } while (numero!! !in min.. max)
@@ -62,18 +62,17 @@ class Console {
         var numero: Long?
         do {
             try {
-                mostrarMensaje(message, lineBreak)
+                printMsg(message, lineBreak)
                 numero = readln().trim().toLong()
                 if (numero !in min..max) {
-                    mostrarMensaje("Error, el número introducido no cumple los requisitos.", true)
+                    printMsg("Error, el número introducido no cumple los requisitos.", true)
                 }
             } catch (e: NumberFormatException) {
-                mostrarMensaje("Error, el valor introducido no es un número entero.", true)
+                printMsg("Error, el valor introducido no es un número entero.", true)
                 numero = null
             }
         } while (numero !in min.. max)
 
         return numero!!
     }
-}
 }
