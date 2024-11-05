@@ -32,7 +32,7 @@ object HibernateUtils {
     // Método para cerrar un EntityManager específico
     fun closeEntityManager(em: EntityManager?) {
         try {
-            if (em equals null && em.isOpen) {
+            if (em!! == null && em.isOpen) {
                 em.close()
             }
         } catch (e: IllegalStateException) {

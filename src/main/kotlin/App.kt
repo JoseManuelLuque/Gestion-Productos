@@ -10,7 +10,7 @@ import service.ProveedorService
 import service.UsuarioService
 
 fun main() {
-    val emf = HibernateUtils.getEntityManagerFactory()
+    val emf = HibernateUtils.getEntityManagerFactory("GestionProductos")
     val productoRepository = ProductoRepository(emf)
     val proveedorRespository = ProveedorRespository(emf)
     val usuarioRepository = UsuarioRepository(emf)
